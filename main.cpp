@@ -16,16 +16,14 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ char
+ int
+ unsigned int
+ float
+ double
+ bool
+
+
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
         - just ignore wchar_t. you do not need to declare 3 variables of type 'wchar_t'
@@ -54,12 +52,31 @@ video: Chapter 2 - Part 3
 //2)
 void variableDeclarations()
 {
-    //example:
-    int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
-    
+    char shoeBox = 'd';
+    char plantPot = 'G';
+    char joyStick = 'v';
 
+    int golfClub = 48093;
+    int teaBag = -564;
+    int lampShade = 12;
+
+    unsigned int tissuePaper = 0;
+    unsigned int pajamaPants = 129;
+    unsigned int dietSoda = 50398;
+
+    float cellTower = 0.1f;
+    float superGlue = 2.43f;
+    float flowerBud = 37.04f;
+
+    double videoTape = 44.0;
+    double scotchTape = 291.15;
+    double freezerTape = 4.1;
+
+    bool tapeMeasure = true;
+    bool gymMembership = true;
+    bool vacuumCleaner = false;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(shoeBox, plantPot, joyStick, golfClub, teaBag, lampShade, tissuePaper, pajamaPants, dietSoda, cellTower, superGlue, flowerBud, videoTape, scotchTape, freezerTape, tapeMeasure, gymMembership, vacuumCleaner); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -75,43 +92,83 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int speakerStand(float height, float weightThatCanHold)
+{
+    ignoreUnused(height, weightThatCanHold);
+    return {};
+}
 /*
  2)
  */
-
+float telephone(float ringVolume, bool isCordless = true)
+{
+    ignoreUnused(ringVolume, isCordless);
+    return {};
+}
 /*
  3)
  */
-
+float printer(float inkLevel = 0.98f, bool isUsb = true)
+{
+    ignoreUnused(inkLevel, isUsb);
+    return {};
+}
 /*
  4)
  */
-
+int parkingPass(int issueDate, bool isExpired = false)
+{
+    ignoreUnused(issueDate, isExpired);
+    return {};
+}
 /*
  5)
  */
-
+double thriftStore(bool hasCassettes = true, bool areTapesGood = false)
+{
+    ignoreUnused(hasCassettes, areTapesGood);
+    return {};
+}
 /*
  6)
  */
-
+double nesConsole(bool works, int numControllers)
+{
+    ignoreUnused(works, numControllers);
+    return {};
+}
 /*
  7)
  */
-
+int mail(bool isJunk, bool isImportant)
+{
+    ignoreUnused(isJunk, isImportant);
+    return {};
+}
 /*
  8)
  */
-
+float boomBox(int numSpeakers, bool hasBassBoost)
+{
+    ignoreUnused(numSpeakers, hasBassBoost);
+    return {};
+}
 /*
  9)
  */
-
+int godzillaMovieCollection(int numTapesOnShelf, bool isBlackAndWhite)
+{
+    ignoreUnused(numTapesOnShelf, isBlackAndWhite);
+    return {};
+}
 /*
  10)
  */
-
+int figTree(float height = 3.2f, bool needsWater = true)
+{
+    ignoreUnused(height, needsWater);
+    return {};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -132,27 +189,28 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto myStand = speakerStand(3.8f, 24.f);
     //2)
-    
+    auto phone = telephone(6.2f, true);
     //3)
-    
+    auto device = printer(0.5f, false);
     //4)
-    
+    auto pass = parkingPass(12, false);
     //5)
-    
+    auto shop = thriftStore(true, true);
     //6)
-    
+    auto system = nesConsole(true, 2);
     //7)
-    
+    auto inbox = mail(true, false);
     //8)
-    
+    auto stereoSystem = boomBox(2, true);
     //9)
-    
+    auto myCollection = godzillaMovieCollection(24, false);
     //10)
-    
+    auto tree = figTree(3.4f, true);
     
     ignoreUnused(carRented);
+    ignoreUnused(myStand, phone, device, pass, shop, system, inbox, stereoSystem, myCollection, tree);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
