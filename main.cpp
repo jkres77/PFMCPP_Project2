@@ -203,7 +203,7 @@ int main()
     //7)
     auto inbox = mail(true, false);
     //8)
-    auto stereoSystem = boomBox(2, true);
+    auto stereoSystem = boomBox(4, true);
     //9)
     auto myCollection = godzillaMovieCollection(24, false);
     //10)
